@@ -1,0 +1,1356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21"
+      fx:controller="com.example.algorithmvisualizer.Controller">
+    <children>
+        <HBox alignment="CENTER">
+            <VBox.margin>
+                <Insets bottom="20.0"/>
+            </VBox.margin>
+            <children>
+                <VBox alignment="CENTER" fillWidth="false" prefHeight="512.0" prefWidth="134.0" spacing="5.0">
+                    <children>
+                        <Label alignment="CENTER" prefHeight="34.0" prefWidth="99.0" text="Algorithm">
+                            <font>
+                                <Font name="MesloLGL Nerd Font Bold" size="18.0"/>
+                            </font>
+                        </Label>
+                        <Button fx:id="bfsButton" mnemonicParsing="false" onAction="#handlebfsButtonClick"
+                                prefHeight="30.0" prefWidth="120.0" stylesheets="@generalStyle.css" text="BFS"/>
+                        <Button fx:id="dfsButton" mnemonicParsing="false" onAction="#handledfsButtonClick"
+                                prefHeight="30.0" prefWidth="120.0" stylesheets="@generalStyle.css" text="DFS"/>
+                        <Button fx:id="dijkstraButton" mnemonicParsing="false" onAction="#handledijkstraButtonClick"
+                                prefHeight="30.0" prefWidth="120.0" stylesheets="@generalStyle.css" text="Dijkstra"/>
+                    </children>
+                    <HBox.margin>
+                        <Insets/>
+                    </HBox.margin>
+                </VBox>
+                <GridPane fx:id="gridPane" alignment="CENTER">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="25.0" minWidth="10.0" prefWidth="25.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="25.0" minWidth="10.0" prefWidth="25.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="25.0" minWidth="10.0" prefWidth="25.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="25.0" minWidth="10.0" prefWidth="25.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="25.0" minWidth="10.0" prefWidth="25.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="25.0" minWidth="10.0" prefWidth="25.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="25.0" minWidth="10.0" prefWidth="25.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="25.0" minWidth="10.0" prefWidth="25.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="25.0" minWidth="10.0" prefWidth="25.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="25.0" minWidth="10.0" prefWidth="25.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="25.0" minWidth="10.0" prefWidth="25.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="25.0" minWidth="10.0" prefWidth="25.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="25.0" minWidth="10.0" prefWidth="25.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="25.0" minWidth="10.0" prefWidth="25.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="25.0" minWidth="10.0" prefWidth="25.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="25.0" minWidth="10.0" prefWidth="25.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="25.0" minWidth="10.0" prefWidth="25.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="25.0" minWidth="10.0" prefWidth="25.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="25.0" minWidth="10.0" prefWidth="25.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="25.0" minWidth="10.0" prefWidth="25.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <!-- 0th row -->
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="0"
+                                   GridPane.rowIndex="0"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="0"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="2"
+                                   GridPane.rowIndex="0"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="3"
+                                   GridPane.rowIndex="0"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="4"
+                                   GridPane.rowIndex="0"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="5"
+                                   GridPane.rowIndex="0"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="6"
+                                   GridPane.rowIndex="0"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="7"
+                                   GridPane.rowIndex="0"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="8"
+                                   GridPane.rowIndex="0"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="9"
+                                   GridPane.rowIndex="0"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="10"
+                                   GridPane.rowIndex="0"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="11"
+                                   GridPane.rowIndex="0"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="12"
+                                   GridPane.rowIndex="0"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="13"
+                                   GridPane.rowIndex="0"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="14"
+                                   GridPane.rowIndex="0"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="15"
+                                   GridPane.rowIndex="0"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="16"
+                                   GridPane.rowIndex="0"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="17"
+                                   GridPane.rowIndex="0"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="18"
+                                   GridPane.rowIndex="0"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="19"
+                                   GridPane.rowIndex="0"/>
+                        <!-- 1st row -->
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="0"
+                                   GridPane.rowIndex="1"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="1"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="2"
+                                   GridPane.rowIndex="1"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="3"
+                                   GridPane.rowIndex="1"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="4"
+                                   GridPane.rowIndex="1"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="5"
+                                   GridPane.rowIndex="1"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="6"
+                                   GridPane.rowIndex="1"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="7"
+                                   GridPane.rowIndex="1"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="8"
+                                   GridPane.rowIndex="1"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="9"
+                                   GridPane.rowIndex="1"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="10"
+                                   GridPane.rowIndex="1"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="11"
+                                   GridPane.rowIndex="1"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="12"
+                                   GridPane.rowIndex="1"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="13"
+                                   GridPane.rowIndex="1"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="14"
+                                   GridPane.rowIndex="1"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="15"
+                                   GridPane.rowIndex="1"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="16"
+                                   GridPane.rowIndex="1"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="17"
+                                   GridPane.rowIndex="1"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="18"
+                                   GridPane.rowIndex="1"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="19"
+                                   GridPane.rowIndex="1"/>
+                        <!-- 2nd row -->
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="0"
+                                   GridPane.rowIndex="2"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="2"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="2"
+                                   GridPane.rowIndex="2"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="3"
+                                   GridPane.rowIndex="2"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="4"
+                                   GridPane.rowIndex="2"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="5"
+                                   GridPane.rowIndex="2"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="6"
+                                   GridPane.rowIndex="2"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="7"
+                                   GridPane.rowIndex="2"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="8"
+                                   GridPane.rowIndex="2"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="9"
+                                   GridPane.rowIndex="2"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="10"
+                                   GridPane.rowIndex="2"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="11"
+                                   GridPane.rowIndex="2"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="12"
+                                   GridPane.rowIndex="2"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="13"
+                                   GridPane.rowIndex="2"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="14"
+                                   GridPane.rowIndex="2"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="15"
+                                   GridPane.rowIndex="2"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="16"
+                                   GridPane.rowIndex="2"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="17"
+                                   GridPane.rowIndex="2"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="18"
+                                   GridPane.rowIndex="2"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="19"
+                                   GridPane.rowIndex="2"/>
+                        <!-- 3rd row -->
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="0"
+                                   GridPane.rowIndex="3"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="3"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="2"
+                                   GridPane.rowIndex="3"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="3"
+                                   GridPane.rowIndex="3"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="4"
+                                   GridPane.rowIndex="3"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="5"
+                                   GridPane.rowIndex="3"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="6"
+                                   GridPane.rowIndex="3"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="7"
+                                   GridPane.rowIndex="3"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="8"
+                                   GridPane.rowIndex="3"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="9"
+                                   GridPane.rowIndex="3"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="10"
+                                   GridPane.rowIndex="3"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="11"
+                                   GridPane.rowIndex="3"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="12"
+                                   GridPane.rowIndex="3"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="13"
+                                   GridPane.rowIndex="3"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="14"
+                                   GridPane.rowIndex="3"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="15"
+                                   GridPane.rowIndex="3"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="16"
+                                   GridPane.rowIndex="3"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="17"
+                                   GridPane.rowIndex="3"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="18"
+                                   GridPane.rowIndex="3"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="19"
+                                   GridPane.rowIndex="3"/>
+                        <!-- 4th row -->
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="0"
+                                   GridPane.rowIndex="4"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="4"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="2"
+                                   GridPane.rowIndex="4"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="3"
+                                   GridPane.rowIndex="4"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="4"
+                                   GridPane.rowIndex="4"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="5"
+                                   GridPane.rowIndex="4"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="6"
+                                   GridPane.rowIndex="4"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="7"
+                                   GridPane.rowIndex="4"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="8"
+                                   GridPane.rowIndex="4"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="9"
+                                   GridPane.rowIndex="4"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="10"
+                                   GridPane.rowIndex="4"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="11"
+                                   GridPane.rowIndex="4"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="12"
+                                   GridPane.rowIndex="4"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="13"
+                                   GridPane.rowIndex="4"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="14"
+                                   GridPane.rowIndex="4"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="15"
+                                   GridPane.rowIndex="4"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="16"
+                                   GridPane.rowIndex="4"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="17"
+                                   GridPane.rowIndex="4"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="18"
+                                   GridPane.rowIndex="4"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="19"
+                                   GridPane.rowIndex="4"/>
+                        <!-- 5th row -->
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="0"
+                                   GridPane.rowIndex="5"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="5"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="2"
+                                   GridPane.rowIndex="5"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="3"
+                                   GridPane.rowIndex="5"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="4"
+                                   GridPane.rowIndex="5"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="5"
+                                   GridPane.rowIndex="5"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="6"
+                                   GridPane.rowIndex="5"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="7"
+                                   GridPane.rowIndex="5"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="8"
+                                   GridPane.rowIndex="5"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="9"
+                                   GridPane.rowIndex="5"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="10"
+                                   GridPane.rowIndex="5"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="11"
+                                   GridPane.rowIndex="5"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="12"
+                                   GridPane.rowIndex="5"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="13"
+                                   GridPane.rowIndex="5"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="14"
+                                   GridPane.rowIndex="5"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="15"
+                                   GridPane.rowIndex="5"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="16"
+                                   GridPane.rowIndex="5"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="17"
+                                   GridPane.rowIndex="5"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="18"
+                                   GridPane.rowIndex="5"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="19"
+                                   GridPane.rowIndex="5"/>
+                        <!-- 6th row -->
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="0"
+                                   GridPane.rowIndex="6"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="6"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="2"
+                                   GridPane.rowIndex="6"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="3"
+                                   GridPane.rowIndex="6"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="4"
+                                   GridPane.rowIndex="6"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="5"
+                                   GridPane.rowIndex="6"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="6"
+                                   GridPane.rowIndex="6"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="7"
+                                   GridPane.rowIndex="6"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="8"
+                                   GridPane.rowIndex="6"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="9"
+                                   GridPane.rowIndex="6"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="10"
+                                   GridPane.rowIndex="6"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="11"
+                                   GridPane.rowIndex="6"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="12"
+                                   GridPane.rowIndex="6"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="13"
+                                   GridPane.rowIndex="6"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="14"
+                                   GridPane.rowIndex="6"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="15"
+                                   GridPane.rowIndex="6"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="16"
+                                   GridPane.rowIndex="6"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="17"
+                                   GridPane.rowIndex="6"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="18"
+                                   GridPane.rowIndex="6"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="19"
+                                   GridPane.rowIndex="6"/>
+                        <!-- 7th row -->
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="0"
+                                   GridPane.rowIndex="7"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="7"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="2"
+                                   GridPane.rowIndex="7"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="3"
+                                   GridPane.rowIndex="7"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="4"
+                                   GridPane.rowIndex="7"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="5"
+                                   GridPane.rowIndex="7"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="6"
+                                   GridPane.rowIndex="7"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="7"
+                                   GridPane.rowIndex="7"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="8"
+                                   GridPane.rowIndex="7"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="9"
+                                   GridPane.rowIndex="7"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="10"
+                                   GridPane.rowIndex="7"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="11"
+                                   GridPane.rowIndex="7"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="12"
+                                   GridPane.rowIndex="7"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="13"
+                                   GridPane.rowIndex="7"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="14"
+                                   GridPane.rowIndex="7"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="15"
+                                   GridPane.rowIndex="7"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="16"
+                                   GridPane.rowIndex="7"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="17"
+                                   GridPane.rowIndex="7"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="18"
+                                   GridPane.rowIndex="7"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="19"
+                                   GridPane.rowIndex="7"/>
+                        <!-- 8th row -->
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="0"
+                                   GridPane.rowIndex="8"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="8"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="2"
+                                   GridPane.rowIndex="8"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="3"
+                                   GridPane.rowIndex="8"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="4"
+                                   GridPane.rowIndex="8"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="5"
+                                   GridPane.rowIndex="8"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="6"
+                                   GridPane.rowIndex="8"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="7"
+                                   GridPane.rowIndex="8"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="8"
+                                   GridPane.rowIndex="8"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="9"
+                                   GridPane.rowIndex="8"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="10"
+                                   GridPane.rowIndex="8"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="11"
+                                   GridPane.rowIndex="8"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="12"
+                                   GridPane.rowIndex="8"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="13"
+                                   GridPane.rowIndex="8"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="14"
+                                   GridPane.rowIndex="8"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="15"
+                                   GridPane.rowIndex="8"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="16"
+                                   GridPane.rowIndex="8"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="17"
+                                   GridPane.rowIndex="8"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="18"
+                                   GridPane.rowIndex="8"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="19"
+                                   GridPane.rowIndex="8"/>
+                        <!-- 9th row -->
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="0"
+                                   GridPane.rowIndex="9"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="9"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="2"
+                                   GridPane.rowIndex="9"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="3"
+                                   GridPane.rowIndex="9"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="4"
+                                   GridPane.rowIndex="9"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="5"
+                                   GridPane.rowIndex="9"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="6"
+                                   GridPane.rowIndex="9"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="7"
+                                   GridPane.rowIndex="9"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="8"
+                                   GridPane.rowIndex="9"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="9"
+                                   GridPane.rowIndex="9"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="10"
+                                   GridPane.rowIndex="9"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="11"
+                                   GridPane.rowIndex="9"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="12"
+                                   GridPane.rowIndex="9"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="13"
+                                   GridPane.rowIndex="9"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="14"
+                                   GridPane.rowIndex="9"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="15"
+                                   GridPane.rowIndex="9"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="16"
+                                   GridPane.rowIndex="9"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="17"
+                                   GridPane.rowIndex="9"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="18"
+                                   GridPane.rowIndex="9"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="19"
+                                   GridPane.rowIndex="9"/>
+                        <!-- 10th row -->
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="0"
+                                   GridPane.rowIndex="10"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="10"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="2"
+                                   GridPane.rowIndex="10"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="3"
+                                   GridPane.rowIndex="10"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="4"
+                                   GridPane.rowIndex="10"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="5"
+                                   GridPane.rowIndex="10"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="6"
+                                   GridPane.rowIndex="10"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="7"
+                                   GridPane.rowIndex="10"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="8"
+                                   GridPane.rowIndex="10"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="9"
+                                   GridPane.rowIndex="10"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="10"
+                                   GridPane.rowIndex="10"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="11"
+                                   GridPane.rowIndex="10"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="12"
+                                   GridPane.rowIndex="10"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="13"
+                                   GridPane.rowIndex="10"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="14"
+                                   GridPane.rowIndex="10"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="15"
+                                   GridPane.rowIndex="10"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="16"
+                                   GridPane.rowIndex="10"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="17"
+                                   GridPane.rowIndex="10"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="18"
+                                   GridPane.rowIndex="10"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="19"
+                                   GridPane.rowIndex="10"/>
+                        <!-- 11th row -->
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="0"
+                                   GridPane.rowIndex="11"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="11"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="2"
+                                   GridPane.rowIndex="11"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="3"
+                                   GridPane.rowIndex="11"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="4"
+                                   GridPane.rowIndex="11"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="5"
+                                   GridPane.rowIndex="11"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="6"
+                                   GridPane.rowIndex="11"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="7"
+                                   GridPane.rowIndex="11"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="8"
+                                   GridPane.rowIndex="11"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="9"
+                                   GridPane.rowIndex="11"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="10"
+                                   GridPane.rowIndex="11"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="11"
+                                   GridPane.rowIndex="11"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="12"
+                                   GridPane.rowIndex="11"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="13"
+                                   GridPane.rowIndex="11"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="14"
+                                   GridPane.rowIndex="11"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="15"
+                                   GridPane.rowIndex="11"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="16"
+                                   GridPane.rowIndex="11"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="17"
+                                   GridPane.rowIndex="11"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="18"
+                                   GridPane.rowIndex="11"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="19"
+                                   GridPane.rowIndex="11"/>
+                        <!-- 12th row -->
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="0"
+                                   GridPane.rowIndex="12"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="12"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="2"
+                                   GridPane.rowIndex="12"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="3"
+                                   GridPane.rowIndex="12"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="4"
+                                   GridPane.rowIndex="12"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="5"
+                                   GridPane.rowIndex="12"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="6"
+                                   GridPane.rowIndex="12"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="7"
+                                   GridPane.rowIndex="12"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="8"
+                                   GridPane.rowIndex="12"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="9"
+                                   GridPane.rowIndex="12"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="10"
+                                   GridPane.rowIndex="12"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="11"
+                                   GridPane.rowIndex="12"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="12"
+                                   GridPane.rowIndex="12"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="13"
+                                   GridPane.rowIndex="12"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="14"
+                                   GridPane.rowIndex="12"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="15"
+                                   GridPane.rowIndex="12"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="16"
+                                   GridPane.rowIndex="12"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="17"
+                                   GridPane.rowIndex="12"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="18"
+                                   GridPane.rowIndex="12"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="19"
+                                   GridPane.rowIndex="12"/>
+                        <!-- 13th row -->
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="0"
+                                   GridPane.rowIndex="13"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="13"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="2"
+                                   GridPane.rowIndex="13"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="3"
+                                   GridPane.rowIndex="13"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="4"
+                                   GridPane.rowIndex="13"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="5"
+                                   GridPane.rowIndex="13"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="6"
+                                   GridPane.rowIndex="13"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="7"
+                                   GridPane.rowIndex="13"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="8"
+                                   GridPane.rowIndex="13"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="9"
+                                   GridPane.rowIndex="13"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="10"
+                                   GridPane.rowIndex="13"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="11"
+                                   GridPane.rowIndex="13"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="12"
+                                   GridPane.rowIndex="13"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="13"
+                                   GridPane.rowIndex="13"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="14"
+                                   GridPane.rowIndex="13"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="15"
+                                   GridPane.rowIndex="13"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="16"
+                                   GridPane.rowIndex="13"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="17"
+                                   GridPane.rowIndex="13"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="18"
+                                   GridPane.rowIndex="13"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="19"
+                                   GridPane.rowIndex="13"/>
+                        <!-- 14th row -->
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="0"
+                                   GridPane.rowIndex="14"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="14"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="2"
+                                   GridPane.rowIndex="14"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="3"
+                                   GridPane.rowIndex="14"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="4"
+                                   GridPane.rowIndex="14"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="5"
+                                   GridPane.rowIndex="14"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="6"
+                                   GridPane.rowIndex="14"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="7"
+                                   GridPane.rowIndex="14"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="8"
+                                   GridPane.rowIndex="14"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="9"
+                                   GridPane.rowIndex="14"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="10"
+                                   GridPane.rowIndex="14"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="11"
+                                   GridPane.rowIndex="14"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="12"
+                                   GridPane.rowIndex="14"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="13"
+                                   GridPane.rowIndex="14"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="14"
+                                   GridPane.rowIndex="14"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="15"
+                                   GridPane.rowIndex="14"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="16"
+                                   GridPane.rowIndex="14"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="17"
+                                   GridPane.rowIndex="14"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="18"
+                                   GridPane.rowIndex="14"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="19"
+                                   GridPane.rowIndex="14"/>
+                        <!-- 15th row -->
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="0"
+                                   GridPane.rowIndex="15"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="15"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="2"
+                                   GridPane.rowIndex="15"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="3"
+                                   GridPane.rowIndex="15"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="4"
+                                   GridPane.rowIndex="15"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="5"
+                                   GridPane.rowIndex="15"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="6"
+                                   GridPane.rowIndex="15"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="7"
+                                   GridPane.rowIndex="15"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="8"
+                                   GridPane.rowIndex="15"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="9"
+                                   GridPane.rowIndex="15"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="10"
+                                   GridPane.rowIndex="15"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="11"
+                                   GridPane.rowIndex="15"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="12"
+                                   GridPane.rowIndex="15"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="13"
+                                   GridPane.rowIndex="15"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="14"
+                                   GridPane.rowIndex="15"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="15"
+                                   GridPane.rowIndex="15"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="16"
+                                   GridPane.rowIndex="15"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="17"
+                                   GridPane.rowIndex="15"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="18"
+                                   GridPane.rowIndex="15"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="19"
+                                   GridPane.rowIndex="15"/>
+                        <!-- 16th row -->
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="0"
+                                   GridPane.rowIndex="16"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="16"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="2"
+                                   GridPane.rowIndex="16"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="3"
+                                   GridPane.rowIndex="16"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="4"
+                                   GridPane.rowIndex="16"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="5"
+                                   GridPane.rowIndex="16"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="6"
+                                   GridPane.rowIndex="16"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="7"
+                                   GridPane.rowIndex="16"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="8"
+                                   GridPane.rowIndex="16"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="9"
+                                   GridPane.rowIndex="16"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="10"
+                                   GridPane.rowIndex="16"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="11"
+                                   GridPane.rowIndex="16"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="12"
+                                   GridPane.rowIndex="16"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="13"
+                                   GridPane.rowIndex="16"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="14"
+                                   GridPane.rowIndex="16"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="15"
+                                   GridPane.rowIndex="16"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="16"
+                                   GridPane.rowIndex="16"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="17"
+                                   GridPane.rowIndex="16"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="18"
+                                   GridPane.rowIndex="16"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="19"
+                                   GridPane.rowIndex="16"/>
+                        <!-- 17th row -->
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="0"
+                                   GridPane.rowIndex="17"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="17"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="2"
+                                   GridPane.rowIndex="17"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="3"
+                                   GridPane.rowIndex="17"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="4"
+                                   GridPane.rowIndex="17"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="5"
+                                   GridPane.rowIndex="17"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="6"
+                                   GridPane.rowIndex="17"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="7"
+                                   GridPane.rowIndex="17"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="8"
+                                   GridPane.rowIndex="17"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="9"
+                                   GridPane.rowIndex="17"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="10"
+                                   GridPane.rowIndex="17"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="11"
+                                   GridPane.rowIndex="17"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="12"
+                                   GridPane.rowIndex="17"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="13"
+                                   GridPane.rowIndex="17"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="14"
+                                   GridPane.rowIndex="17"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="15"
+                                   GridPane.rowIndex="17"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="16"
+                                   GridPane.rowIndex="17"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="17"
+                                   GridPane.rowIndex="17"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="18"
+                                   GridPane.rowIndex="17"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="19"
+                                   GridPane.rowIndex="17"/>
+                        <!-- 18th row -->
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="0"
+                                   GridPane.rowIndex="18"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="18"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="2"
+                                   GridPane.rowIndex="18"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="3"
+                                   GridPane.rowIndex="18"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="4"
+                                   GridPane.rowIndex="18"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="5"
+                                   GridPane.rowIndex="18"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="6"
+                                   GridPane.rowIndex="18"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="7"
+                                   GridPane.rowIndex="18"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="8"
+                                   GridPane.rowIndex="18"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="9"
+                                   GridPane.rowIndex="18"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="10"
+                                   GridPane.rowIndex="18"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="11"
+                                   GridPane.rowIndex="18"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="12"
+                                   GridPane.rowIndex="18"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="13"
+                                   GridPane.rowIndex="18"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="14"
+                                   GridPane.rowIndex="18"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="15"
+                                   GridPane.rowIndex="18"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="16"
+                                   GridPane.rowIndex="18"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="17"
+                                   GridPane.rowIndex="18"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="18"
+                                   GridPane.rowIndex="18"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="19"
+                                   GridPane.rowIndex="18"/>
+                        <!-- 19th row -->
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="0"
+                                   GridPane.rowIndex="19"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="19"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="2"
+                                   GridPane.rowIndex="19"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="3"
+                                   GridPane.rowIndex="19"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="4"
+                                   GridPane.rowIndex="19"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="5"
+                                   GridPane.rowIndex="19"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="6"
+                                   GridPane.rowIndex="19"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="7"
+                                   GridPane.rowIndex="19"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="8"
+                                   GridPane.rowIndex="19"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="9"
+                                   GridPane.rowIndex="19"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="10"
+                                   GridPane.rowIndex="19"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="11"
+                                   GridPane.rowIndex="19"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="12"
+                                   GridPane.rowIndex="19"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="13"
+                                   GridPane.rowIndex="19"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="14"
+                                   GridPane.rowIndex="19"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="15"
+                                   GridPane.rowIndex="19"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="16"
+                                   GridPane.rowIndex="19"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="17"
+                                   GridPane.rowIndex="19"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="18"
+                                   GridPane.rowIndex="19"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.5" width="25.0" GridPane.columnIndex="19"
+                                   GridPane.rowIndex="19"/>
+                    </children>
+                    <HBox.margin>
+                        <Insets left="40.0" right="40.0"/>
+                    </HBox.margin>
+                </GridPane>
+                <VBox alignment="CENTER" prefHeight="500.0" prefWidth="120.0" spacing="10.0">
+                    <HBox.margin>
+                        <Insets/>
+                    </HBox.margin>
+                </VBox>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="858.0" spacing="5.0">
+            <children>
+                <Button fx:id="run" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity"
+                        mnemonicParsing="false" prefHeight="35.0" prefWidth="120.0"
+                        style="-fx-background-color: lightgreen;" stylesheets="@generalStyle.css" text="Run">
+                    <font>
+                        <Font name="Verdana Bold" size="14.0"/>
+                    </font>
+                    <HBox.margin>
+                        <Insets left="25.0"/>
+                    </HBox.margin>
+                </Button>
+                <Button fx:id="resetPath" alignment="CENTER" mnemonicParsing="false" prefHeight="39.0" prefWidth="114.0"
+                        style="-fx-background-color: yellow;" stylesheets="@generalStyle.css" text="Reset Path">
+                    <font>
+                        <Font name="Verdana" size="12.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="resetObstacles" mnemonicParsing="false" prefHeight="39.0" prefWidth="161.0"
+                        style="-fx-background-color: orange;" stylesheets="@generalStyle.css" text="Reset Obstacles">
+                    <font>
+                        <Font name="Verdana" size="12.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="resetEverything" mnemonicParsing="false" prefHeight="39.0" prefWidth="165.0"
+                        style="-fx-background-color: lightcoral;" stylesheets="@generalStyle.css"
+                        text="Reset Everything">
+                    <font>
+                        <Font name="Verdana" size="12.0"/>
+                    </font>
+                </Button>
+                <Pane prefHeight="40.0" prefWidth="175.0"/>
+                <Button fx:id="backButton" mnemonicParsing="false" onAction="#handleBackButtonClick" prefWidth="70.0"
+                        stylesheets="@generalStyle.css" text="Back"/>
+            </children>
+            <VBox.margin>
+                <Insets left="10.0"/>
+            </VBox.margin>
+            <padding>
+                <Insets bottom="10.0"/>
+            </padding>
+        </HBox>
+    </children>
+</VBox>

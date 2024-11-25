@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="mainAnchorPane" prefHeight="600.0" prefWidth="900.0"
+            xmlns="http://javafx.com/javafx/21"
+            fx:controller="com.example.algorithmvisualizer.AlgorithmVisualizerMenuController">
+    <Button alignment="CENTER" layoutX="578.0" layoutY="237.0" mnemonicParsing="false"
+            onAction="#handleSearchingButtonClick" prefHeight="59.0" prefWidth="141.0" stylesheets="@menuStyle.css"
+            text="PATHFINDING" textAlignment="CENTER">
+        <font>
+            <Font name="MesloLGL Nerd Font Bold" size="16.0"/>
+        </font>
+    </Button>
+    <Button alignment="CENTER" layoutX="578.0" layoutY="168.0" mnemonicParsing="false"
+            onAction="#handleSortingButtonClick" prefHeight="59.0" prefWidth="141.0" stylesheets="@menuStyle.css"
+            text="SORTING" textAlignment="CENTER">
+        <font>
+            <Font name="MesloLGM Nerd Font Bold" size="15.0"/>
+        </font>
+    </Button>
+    <Label fx:id="label2" layoutX="139.0" layoutY="250.0" text="AlgoVis" textFill="WHITE">
+        <font>
+            <Font name="MesloLGL Nerd Font Bold" size="58.0"/>
+        </font>
+    </Label>
+    <Button alignment="CENTER" layoutX="578.0" layoutY="305.0" mnemonicParsing="false"
+            onAction="#handleCloseButtonClick"
+            prefHeight="59.0" prefWidth="141.0" style="-fx-background-color: lightcoral;" stylesheets="@menuStyle.css"
+            text="CLOSE">
+        <font>
+            <Font name="MesloLGL Nerd Font Bold" size="14.0"/>
+        </font>
+    </Button>
+<!--    <Label fx:id="label3" layoutX="139.0" layoutY="305.0" text="&lt;/&gt;" textFill="WHITE">-->
+<!--        <font>-->
+<!--            <Font name="MesloLGL Nerd Font Bold" size="58.0"/>-->
+<!--        </font>-->
+<!--    </Label>-->
+    <Label fx:id="label3" layoutX="139.0" layoutY="305.0" text=" " textFill="WHITE">
+        <font>
+            <Font name="MesloLGL Nerd Font Bold" size="58.0"/>
+        </font>
+    </Label>
+<!--    <Label fx:id="label1" layoutX="139.0" layoutY="190.0" text="&lt;&gt;" textFill="WHITE">-->
+<!--        <font>-->
+<!--            <Font name="MesloLGL Nerd Font Bold" size="58.0"/>-->
+<!--        </font>-->
+<!--    </Label>-->
+    <Label fx:id="label1" layoutX="139.0" layoutY="190.0" text=" " textFill="WHITE">
+        <font>
+            <Font name="MesloLGL Nerd Font Bold" size="58.0"/>
+        </font>
+    </Label>
+    <Label fx:id="label4" layoutX="139.0" layoutY="383.0" text="Algorithm Visualizer" textFill="WHITE">
+        <font>
+            <Font name="MesloLGL Nerd Font Regular" size="17.0"/>
+        </font>
+    </Label>
+</AnchorPane>
